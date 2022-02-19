@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-home
+
+{% for app in apps.all %}
+<html>
+    <head>
+        <link href="{% static 'home/home.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row mt-5 mb-5 applistbg">
+            <div class="col-2">
+                <img src="{{ app.image.url }}" class="img-fluid">
+            </div>
+            <div class="col-4">
+                <h3>{{ app.title }}</h3><br>
+                <p>{{ app.description }}</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+{% endfor %}
+
 {% endblock %}
