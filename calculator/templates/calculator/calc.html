@@ -192,37 +192,73 @@
             })
 
             add.addEventListener("click", function(){
-                res += "+"
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"+"
+                }
+                else{
+                    res += "+"
+                }
                 render()
             })
 
             sub.addEventListener("click", function(){
-                res += "-"
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"-"
+                }
+                else{
+                    res += "-"
+                }
                 render()
             })
 
             mult.addEventListener("click", function(){
-                res += "*"
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"*"
+                }
+                else{
+                    res += "*"
+                }
                 render()
             })
 
             div.addEventListener("click", function(){
-                res += "/"
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"/"
+                }
+                else{
+                    res += "/"
+                }
                 render()
             })
 
             mod.addEventListener("click", function(){
-                res += "%"
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"%"
+                }
+                else{
+                    res += "%"
+                }
                 render()
             })
 
             point.addEventListener("click", function(){
-                res += "."
+                if(isOperator()){
+                    res = res.substring(0, res.length-1)+"."
+                }
+                else{
+                    res += "."
+                }
                 render()
             })
 
             equal.addEventListener("click", function(){
-                let num = eval(res)
+                let num
+                if(isOperator()){
+                    num = eval(res.substring(0, res.length-1))
+                }
+                else{
+                num = eval(res)
+                }
                 res = num.toString()
                 render()
             })
@@ -241,6 +277,13 @@
                 }
                 render()
             })
+
+            function isOperator(){
+                if(res[res.length-1]==="+" || res[res.length-1]==="-" || res[res.length-1]==="*" || res[res.length-1]==="/" || res[res.length-1]==="%" || res[res.length-1]==="."){
+                    return true
+                }
+                return false
+            }
 
             function render(){
                 result.innerText = res
