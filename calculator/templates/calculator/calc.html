@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link href="{% static 'calculator/calc.css' %}" rel="stylesheet">       
+    </head>
+    <body>
+        <div class="container my-5">
+            <div class="row">
+                <h3 class="result" id="result">0</h3>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-warning calc" id="clear">Clear</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="del">Del</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="mod">%</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="div">/</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary calc" id="seven">7</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="eight">8</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="nine">9</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="mult">x</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary calc" id="four">4</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="five">5</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="six">6</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="sub">-</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary calc" id="one">1</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="two">2</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="three">3</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="add">+</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary calc">empty</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="zero">0</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary calc" id="point">.</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning calc" id="equal">=</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            // DOM Elements
+            const result = document.getElementById("result")
+
+            //operations
+            const clear = document.getElementById("clear")
+            const del = document.getElementById("del")
+            const mod = document.getElementById("mod")
+            const mult = document.getElementById("mult")
+            const div = document.getElementById("div")
+            const sub = document.getElementById("sub")
+            const add = document.getElementById("add")
+            const equal = document.getElementById("equal")
+            const point = document.getElementById("point")
+
+            //numbers
+            const one = document.getElementById("one")
+            const two = document.getElementById("two")
+            const three = document.getElementById("three")
+            const four = document.getElementById("four")
+            const five = document.getElementById("five")
+            const six = document.getElementById("six")
+            const seven = document.getElementById("seven")
+            const eight = document.getElementById("eight")
+            const nine = document.getElementById("nine")
+
+            //logic
+            let res = "0"
+
+            one.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "1"
+                render()
+            })
+
+            two.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "2"
+                render()
+            })
+
+            three.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "3"
+                render()
+            })
+
+            four.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "4"
+                render()
+            })
+
+            five.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "5"
+                render()
+            })
+
+            six.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "6"
+                render()
+            })
+
+            seven.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "7"
+                render()
+            })
+
+            eight.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "8"
+                render()
+            })
+
+            nine.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "9"
+                render()
+            })
+
+            zero.addEventListener("click", function(){
+                if(res==="0"){
+                    res=""
+                }
+                res += "0"
+                render()
+            })
+
+            add.addEventListener("click", function(){
+                res += "+"
+                render()
+            })
+
+            sub.addEventListener("click", function(){
+                res += "-"
+                render()
+            })
+
+            mult.addEventListener("click", function(){
+                res += "*"
+                render()
+            })
+
+            div.addEventListener("click", function(){
+                res += "/"
+                render()
+            })
+
+            mod.addEventListener("click", function(){
+                res += "%"
+                render()
+            })
+
+            point.addEventListener("click", function(){
+                res += "."
+                render()
+            })
+
+            equal.addEventListener("click", function(){
+                let num = eval(res)
+                res = num.toString()
+                render()
+            })
+
+            clear.addEventListener("click", function(){
+                res = "0"
+                render()
+            })
+
+            del.addEventListener("click", function(){
+                if(res.length===1){
+                    res = "0"
+                }
+                else{
+                    res = res.substring(0, res.length-1)
+                }
+                render()
+            })
+
+            function render(){
+                result.innerText = res
+            }
+        </script> 
+    </body>
+</html>
+
+
+
+{% endblock %}

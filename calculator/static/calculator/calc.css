@@ -1,0 +1,11 @@
+.calc{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 5px;
+}
+
+.result{
+    text-align: end;
+    padding-right: 20px;
+    font-size: 75px;
+}
