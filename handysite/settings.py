@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'calculator.apps.CalculatorConfig',
+    'passgen.apps.PassgenConfig',
     'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
