@@ -1,87 +1,79 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-        <link href="{% static 'calculator/calc.css' %}" rel="stylesheet"> 
-        
-        <div class="container my-5">
-            <div class="row">
-                <h3 class="result" id="result">0</h3>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-warning calc" id="clear">Clear</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="del">Del</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="mod">%</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="div">/</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary calc" id="seven">7</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="eight">8</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="nine">9</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="mult">x</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary calc" id="four">4</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="five">5</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="six">6</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="sub">-</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary calc" id="one">1</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="two">2</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="three">3</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="add">+</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-primary calc">empty</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="zero">0</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary calc" id="point">.</button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-warning calc" id="equal">=</button>
-                </div>
-            </div>
-        </div>
-        <script src="{% static 'calculator/calc.js' %}"></script>
-
-
-
-
-
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link href="{% static 'calculator/calc.css' %}" rel="stylesheet" />
+<div class="container my-5">
+  <div class="row">
+    <h3 class="result" id="result">0</h3>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-warning calc" id="clear">Clear</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="del">Del</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="mod">%</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="div">/</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary calc" id="seven">7</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="eight">8</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="nine">9</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="mult">x</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary calc" id="four">4</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="five">5</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="six">6</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="sub">-</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary calc" id="one">1</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="two">2</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="three">3</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="add">+</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary calc">empty</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="zero">0</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary calc" id="point">.</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-warning calc" id="equal">=</button>
+    </div>
+  </div>
+</div>
+<script src="{% static 'calculator/calc.js' %}"></script>
 {% endblock %}
