@@ -1,7 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<link href="{% static 'passgen/passgen.css' %}" rel="stylesheet">
+<div class="container my-5 py-5 px-5" id="card">
+    <h1 class="foreground">Generate a Secure Password</h1>
+    <p class="foreground">Generate a secure password and be harder to crack</p>
+    <input id="nums" type="number" class="form-control" placeholder="How many characters?">
+    <p id="error"></p>
+    <button id="button-el" class="btn btn-success mb-3">Password Generator</button>
+    <hr size="5">
+    <div class="row mb-3">
+        <div class="col">
+            <input class="form-control" id="a" disabled>
+        </div>
+        <div class="col">
+            <input class="form-control" id="b" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" id="c" disabled>
+        </div>
+        <div class="col">
+            <input class="form-control" id="d" disabled>
+        </div>
+    </div>
+</div>
 
-
-
+<script src ="{% static 'passgen/passgen.js' %}"></script>
 {% endblock %}
