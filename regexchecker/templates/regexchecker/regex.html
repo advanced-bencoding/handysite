@@ -22,12 +22,44 @@
 </div>
 
 <div class="my-5">
-    <h3 class="mb-3">Check Valid IP Address</h3>
+    <h3 >Check Valid IP Address</h3>
     <input type="text" id="ip" class="form-control" placeholder="Input IP here">
-    <button id="ip-submit" class="btn btn-success my-3">Check</button>
+    <button id="ip-submit" class="btn btn-success my-3">Check IP</button>
     <hr class="mb-3">
     <h4>Result:</h4>
     <input type="text" id="ip-result" class="form-control" disabled>
 </div>
+
+<div class="my-5">
+    <h3>Strong Password Check</h3>
+    <input type="password" id="password" class="form-control my-2" placeholder="Enter password here">
+    <h4>Conditions:</h4>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-default">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Default check</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-length">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Minimum Password Length</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-upper">
+        <label class="form-check-label" for="flexSwitchCheckDefault">No. of upper case chars</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-lower">
+        <label class="form-check-label" for="flexSwitchCheckDefault">No. of lower case chars</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-special">
+        <label class="form-check-label" for="flexSwitchCheckDefault">No. of special chars</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="check-numeric">
+        <label class="form-check-label" for="flexSwitchCheckDefault">No. of numeric chars</label>
+    </div>
+    <button id="password-submit" class="btn btn-success my-3">Check Password</button>
+</div>
+
 <script src="{% static 'regexchecker/regex.js' %}"></script>
 {% endblock %}
