@@ -5,6 +5,8 @@ const customResult = document.getElementById("custom-result");
 const ip = document.getElementById("ip");
 const ipCheck = document.getElementById("ip-submit");
 const ipResult = document.getElementById("ip-result");
+const pass = document.getElementById("password");
+const checkPass = document.getElementById("password-submit");
 
 const def = document.getElementById("check-default");
 def.checked = true;
@@ -78,3 +80,8 @@ const defstatus = () => {
     def.checked = false;
   }
 };
+
+checkPass.addEventListener("click", ()=>{
+})
+
+pass.setCustomValidity("hello");
