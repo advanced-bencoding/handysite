@@ -1,7 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'regexchecker/regex.css' %}"
-<h1>hello</h1>
+<link rel="stylesheet" href="{% static 'regexchecker/regex.css' %}">
+<div class="my-5">
+    <h3 class="mb-3">Custom Regex Checker</h3>
+    <input type="text" id="custom" class="form-control" placeholder="Input string here">
+    <input type="text" id="custom-regex" class="form-control my-2" placeholder="Input custom regex here">
+    <h4>Flags:</h4>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="ignore-case">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Ignore case (i)</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="global">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Look for all matches (g)</label>
+    </div>
+    <button id="custom-submit" class="btn btn-success my-2">Check Regex</button>
+    <hr class="mb-3">
+    <h4>Result:</h4>
+    <input type="text" id="custom-result" class="form-control" disabled>
+</div>
+
+<div class="my-5">
+    <h3 class="mb-3">Check Valid IP Address</h3>
+    <input type="text" id="ip" class="form-control" placeholder="Input IP here">
+    <button id="ip-submit" class="btn btn-success my-3">Check</button>
+    <hr class="mb-3">
+    <h4>Result:</h4>
+    <input type="text" id="ip-result" class="form-control" disabled>
+</div>
 <script src="{% static 'regexchecker/regex.js' %}"></script>
 {% endblock %}
