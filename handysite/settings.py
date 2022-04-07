@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'regexchecker.apps.RegexcheckerConfig',
     'calculator.apps.CalculatorConfig',
     'passgen.apps.PassgenConfig',
     'home.apps.HomeConfig',

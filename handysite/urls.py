@@ -20,10 +20,12 @@ from django.urls import path
 import home.views
 import calculator.views
 import passgen.views
+import regexchecker.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home.views.home, name='home'),
     path('calculator/', calculator.views.calculator, name='calculator'),
     path('passgen/', passgen.views.passgen, name='passgen'),
+    path('regexchecker/', regexchecker.views.regex, name='regex'),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
