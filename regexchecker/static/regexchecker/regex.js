@@ -166,7 +166,7 @@ checkPass.addEventListener("click", ()=>{
     if(!(/[0-9]/.test(str)) && numeric.checked){
       error+=`The password must contain a number. `;
     }
-    if(!(/$&+,:;=?@#|'<>.*()%!/) && special.checked){
+    if(!(/$&+,:;=?@#|'<>.*()%!/.test(str)) && special.checked){
       error+=`The password must contain a special character. `;
     }
     alert(error);
