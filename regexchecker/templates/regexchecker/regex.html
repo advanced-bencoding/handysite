@@ -32,31 +32,40 @@
 
 <div class="my-5">
     <h3>Strong Password Check</h3>
-    <input type="password" id="password" class="form-control my-2" placeholder="Enter password here">
+    <form id="passcheckboi">
+        <input type="text" id="password" class="form-control my-2" placeholder="Enter password here" min="3" pattern="[A-Z]">
+    </form>
     <h4>Conditions:</h4>
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="check-default">
         <label class="form-check-label" for="flexSwitchCheckDefault">Default check</label>
     </div>
-    <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="check-length">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Minimum Password Length</label>
-    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="check-length">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Set Minimum Password Length</label>
+            </div>
+        </div>
+        <div class="col-1">
+            <input id="pass-length" type="number" class="form-control" value="8">
+        </div>
+    </div>  
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="check-upper">
-        <label class="form-check-label" for="flexSwitchCheckDefault">No. of upper case chars</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Check upper case chars</label>
     </div>
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="check-lower">
-        <label class="form-check-label" for="flexSwitchCheckDefault">No. of lower case chars</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Check lower case chars</label>
     </div>
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="check-special">
-        <label class="form-check-label" for="flexSwitchCheckDefault">No. of special chars</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Check special chars</label>
     </div>
     <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="check-numeric">
-        <label class="form-check-label" for="flexSwitchCheckDefault">No. of numeric chars</label>
+        <label class="form-check-label" for="flexSwitchCheckDefault">Check numeric chars</label>
     </div>
     <button id="password-submit" class="btn btn-success my-3">Check Password</button>
 </div>
