@@ -78,6 +78,9 @@ def.addEventListener("click", () => {
 
 length.addEventListener("click", () => {
   defstatus();
+  if(!length.checked){
+    isEveroneUnchecked();
+  }
 });
 
 upper.addEventListener("click", () => {
@@ -87,6 +90,7 @@ upper.addEventListener("click", () => {
   }
   else{
     upperlen = 0;
+    isEveroneUnchecked();
   }
 });
 
@@ -97,6 +101,7 @@ lower.addEventListener("click", () => {
   }
   else{
     lowerlen = 0;
+    isEveroneUnchecked();
   }
 });
 
@@ -107,6 +112,7 @@ special.addEventListener("click", () => {
   }
   else{
     speciallen = 0;
+    isEveroneUnchecked();
   }
 });
 
@@ -117,6 +123,7 @@ numeric.addEventListener("click", () => {
   }
   else{
     numericlen = 0;
+    isEveroneUnchecked();
   }
 });
 
@@ -125,6 +132,12 @@ const defstatus = () => {
     def.checked = false;
   }
 };
+
+function isEveroneUnchecked(){
+  if(!(length.checked || upper.checked || lower.checked || special.checked || numeric.checked)){
+    def.checked = true;
+  }
+}
 
 checkPass.addEventListener("click", ()=>{
   if(length.checked){
@@ -135,6 +148,27 @@ checkPass.addEventListener("click", ()=>{
   }
   let newRegex = `(?=.*[a-z]{${lowerlen},})(?=.*[A-Z]{${upperlen},})(?=.*[0-9]{${numericlen},})(?=.*[$&+,:;=?@#|'<>.*()%!]{${speciallen},})[a-zA-Z0-9$&+,:;=?@#|'<>.-^*()%!]{${passlen},}`;
   generateRegex(newRegex);
+  let error = "";
   let str = pass.value;
-  alert(newRegexObj.test(str));
+  if(newRegexObj.test(str)){
+    alert("The password is strong!!!");
+  }
+  else{
+    if(str.length<passlen){
+      error+=`The password must be ${passlen} characters long. `;
+    }
+    if(!(/[a-z]/.test(str)) && lower.checked){
+      error+=`The password must contain a lower case letter. `;
+    }
+    if(!(/[A-Z]/.test(str)) && upper.checked){
+      error+=`The password must contain an upper case letter. `;
+    }
+    if(!(/[0-9]/.test(str)) && numeric.checked){
+      error+=`The password must contain a number. `;
+    }
+    if(!(/$&+,:;=?@#|'<>.*()%!/) && special.checked){
+      error+=`The password must contain a special character. `;
+    }
+    alert(error);
+  }
 })
